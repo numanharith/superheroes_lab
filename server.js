@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 
 // index route
-app.get('/superheroes', (req, res) => {
+app.get('/', (req, res) => {
     res.render('index', {
         superheroes: superheroes,
         villains: villains
