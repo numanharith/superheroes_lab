@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const superheroes = require('./models/superheroes');
 const villains = require('./models/villains');
-
+const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 
 // index route
@@ -26,6 +26,6 @@ app.get('/villains/:index', (req, res) => {
     res.render('showVillain', {villain: villains[req.params.index]});
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Here to save the day...')
 });
